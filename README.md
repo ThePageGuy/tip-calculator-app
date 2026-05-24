@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub]()
-- Live Site URL: [Demo]()
+- Solution URL: [GitHub](https://github.com/ThePageGuy/tip-calculator-app)
+- Live Site URL: [Demo](https://thepageguy.github.io/tip-calculator-app/)
 
 ## My process
 
