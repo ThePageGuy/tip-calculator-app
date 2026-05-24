@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0"
+         >
+      <title>Frontend Mentor | Tip Calculator App</title>
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="32x32"
+         href="./images/favicon-32x32.png"
+         >
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link
+         rel="preconnect"
+         href="https://fonts.gstatic.com"
+         crossorigin
+         >
+      <link
+         href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+         rel="stylesheet"
+         >
+      <!-- Styles -->
+      <link rel="stylesheet" href="style.css">
+      <!-- Scripts -->
+      <script defer src="main.js"></script>
+   </head>
+   <body>
+      <main class="app">
+         <h1 class="sr-only">
+            Tip Calculator
+         </h1>
+         <img
+            class="app__logo"
+            src="./images/logo.svg"
+            alt="Splitter"
+            >
+         <section
+            class="calculator"
+            aria-label="Tip calculator"
+            >
+            <!-- FORM -->
+            <form
+               class="calculator__form"
+               autocomplete="off"
+               >
+               <!-- BILL -->
+               <div class="form-group">
+                  <label
+                     class="form-group__label"
+                     for="bill"
+                     >
+                  Bill
+                  </label>
+                  <input
+                     class="form-group__input form-group__input--bill"
+                     type="number"
+                     id="bill"
+                     name="bill"
+                     placeholder="0"
+                     min="0"
+                     step="0.01"
+                     inputmode="decimal"
+                     data-js="bill-input"
+                     required
+                     >
+               </div>
+               <!-- TIP SELECTION -->
+               <fieldset class="tip-selector">
+                  <legend class="tip-selector__legend">
+                     Select Tip %
+                  </legend>
+                  <div class="tip-selector__options">
+                     <button
+                        class="tip-selector__button"
+                        type="button"
+                        data-js="tip-button"
+                        data-tip="5"
+                        >
+                     5%
+                     </button>
+                     <button
+                        class="tip-selector__button"
+                        type="button"
+                        data-js="tip-button"
+                        data-tip="10"
+                        >
+                     10%
+                     </button>
+                     <button
+                        class="tip-selector__button"
+                        type="button"
+                        data-js="tip-button"
+                        data-tip="15"
+                        >
+                     15%
+                     </button>
+                     <button
+                        class="tip-selector__button"
+                        type="button"
+                        data-js="tip-button"
+                        data-tip="25"
+                        >
+                     25%
+                     </button>
+                     <button
+                        class="tip-selector__button"
+                        type="button"
+                        data-js="tip-button"
+                        data-tip="50"
+                        >
+                     50%
+                     </button>
+                     <input
+                        class="tip-selector__custom-input"
+                        type="number"
+                        id="custom-tip"
+                        name="customTip"
+                        placeholder="Custom"
+                        min="0"
+                        step="0.01"
+                        inputmode="decimal"
+                        aria-label="Custom tip percentage"
+                        data-js="custom-tip-input"
+                        >
+                  </div>
+               </fieldset>
+               <!-- PEOPLE -->
+               <div class="form-group">
+                  <div class="form-group__meta">
+                     <label
+                        class="form-group__label"
+                        for="people"
+                        >
+                     Number of People
+                     </label>
+                     <p
+                        class="form-group__error"
+                        id="people-error"
+                        aria-live="polite"
+                        hidden
+                        >
+                        Can't be zero
+                     </p>
+                  </div>
+                  <input
+                     class="form-group__input form-group__input--people"
+                     type="number"
+                     id="people"
+                     name="people"
+                     placeholder="0"
+                     min="1"
+                     step="1"
+                     inputmode="numeric"
+                     aria-describedby="people-error"
+                     data-js="people-input"
+                     required
+                     >
+               </div>
+            </form>
+            <!-- RESULTS -->
+            <section
+               class="calculator__results"
+               aria-label="Calculation results"
+               >
+               <div class="results">
+                  <!-- TIP AMOUNT -->
+                  <div class="result">
+                     <div class="result__meta">
+                        <p class="result__title">
+                           Tip Amount
+                        </p>
+                        <p class="result__subtitle">
+                           / person
+                        </p>
+                     </div>
+                     <output
+                        class="result__amount"
+                        id="tip-amount"
+                        aria-live="polite"
+                        data-js="tip-amount"
+                        >
+                     $0.00
+                     </output>
+                  </div>
+                  <!-- TOTAL -->
+                  <div class="result">
+                     <div class="result__meta">
+                        <p class="result__title">
+                           Total
+                        </p>
+                        <p class="result__subtitle">
+                           / person
+                        </p>
+                     </div>
+                     <output
+                        class="result__amount"
+                        id="total-amount"
+                        aria-live="polite"
+                        data-js="total-amount"
+                        >
+                     $0.00
+                     </output>
+                  </div>
+               </div>
+               <!-- RESET -->
+               <button
+                  class="calculator__reset-button"
+                  type="reset"
+                  data-js="reset-button"
+                  disabled
+                  >
+               Reset
+               </button>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>
